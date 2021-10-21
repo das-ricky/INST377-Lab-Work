@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.top-bar {
+  color: black;
+  background-color: teal;
+  padding: 10px 0;
+}
+
+.menu-container {
+  color: #fff;
+  background-color: #5995da; /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  border: 1px solid #fff; /* For debugging */
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  border: 1px solid #fff; /* For debugging */
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+
+.signup {
+  margin-left: 20px;
+}
+
+.login {
+  margin-left: 20px;
+}
+
+.header-container {
+  color: #5995da;
+  background-color: #d6e9fe;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.photo-grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-grid {
+  width: 300px;
+  /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center; */
+}
+
+.photo-grid .photo-grid-item,
+.photo-grid .photo-grid-item--hidden {
+  display: none;
+}
+
+.photo-grid .photo-grid-item-visible {
+  display: block;
+}
+
+.photo-grid-item {
+  border: 1px solid #fff;
+  width: 300px;
+  height: 300px;
+}
+
+.carousel-button {
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px transparent;
+  background-color: gray;
+}
+
+.carousel-button-pressed {
+  border-radius: 5px;
+  border: 2px solid green;
+  background-color: orange;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  border: 1px solid #fff;
+  background-color: #d6e9fe;
+  height: 200px;
+  flex: 1;
+}
+
+.footer-one,
+.footer-three {
+  background-color: #5995da;
+  flex: initial;
+  width: 300px;
+}
