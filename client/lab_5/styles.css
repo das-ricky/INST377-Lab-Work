@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
     ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-  background-color: darkslategray;
+  background: darkslategray;
 }
 
 /* Page Layout */
@@ -20,8 +20,23 @@ body {
 
 .wrapper {
   display: flex;
+  flex-direction: column;
 }
+
 .container {
+  display: flex;
   max-width: 960px;
   margin-top: 25px;
+  justify-content: space-between;
+}
+
+.header {
+    display:flex;
+    background-color: skyblue;
+    font-size: x-large;
+    margin: 30px 30px 5px 30px;
+    border-radius: 5px;
+    padding: 25px;
+    width: 80%;
+    box-shadow: 2px 2px 2px gray;
 }
