@@ -1,19 +1,20 @@
 /* eslint-disable no-shadow */
 /* eslint-disable arrow-body-style */
-const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-const places = [];
-fetch(endpoint).then((blob) => blob.json()).then((data) => places.push(...data))
-function findMatches(word, places) {
-  return places.filter((place) => {
-    const regex = new RegExp(word, 'gi');
-    return place.name.match(regex) || place.category.match(regex)
-  });
-}
+async function windowActions() {
+  const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+  const request = await fetch(endpoint)
+  const places = await request.json()
+  function findMatches(word, places) {
+    return places.filter((place) => {
+      const regex = new RegExp(word, 'gi');
+      return place.name.match(regex) || place.category.match(regex)
+    });
+  }
 
-function displayMatches() {
-  const matchArray = findMatches(this.value, places);
-  const html = matchArray.map((place) => {
-    return `
+  function displayMatches(event) {
+    const matchArray = findMatches(event.target.value, places);
+    const html = matchArray.map((place) => {
+      return `
       <li style="margin-bottom:20px;">
         <span class="name">${place.name}</span>
         <br>
@@ -26,12 +27,15 @@ function displayMatches() {
         <span class="zip" style="font-style:italic;">${place.zip}</span>
       </li>
     `;
-  }).join('');
-  document.querySelector('.suggestions').innerHTML = html;
+    }).join('');
+    document.querySelector('.suggestions').innerHTML = html;
+  }
+
+  const searchInput = document.querySelector('.search');
+  const suggestions = document.querySelector('.suggestions');
+
+  searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', (evt) => { displayMatches(evt) });
 }
 
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+window.onload = windowActions;
