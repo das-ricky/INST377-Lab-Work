@@ -2,23 +2,34 @@
 <html lang='en'>
   <head>
     <meta charset='UTF-8'/>
-    <title>Das Lab 6</title>
+    <title>Das Lab 7</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <link rel='stylesheet' href='styles.css'/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
   </head>
   <body>
-    <header>
-      <h1>Typeahead Entries</h1>
-    </header>
 
-    <form class="search-form">
+    <div class = "container columns">
+    <div class = "controls column">
+        <h1 class = "title">Ricky Das JSON to Map Markers</h1>
+        <h2 class = "subtitle">Food search filtered by zip code proximity</h2>
+    <div class = "field">
+        <label class = "label">Search</label>
         <input type="text" class="search">
         <ul class="suggestions">
-          <li>Filter for a name</li>
-          <li>or a category</li>
         </ul>
-      </form>
-
-
+    </div>
+</div>
+    <div id = "map" class="map column"></div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
